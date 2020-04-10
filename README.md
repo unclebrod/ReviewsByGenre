@@ -2,7 +2,7 @@
 The goal of this project is to explore how albums across various genres are reviewed by critics, based on normalized album reviews from Metacritic. While data across all genres are analyzed, I take a deeper look in particular at how rap album reviews differ from other genres.
 
 # Background & Inspiration
-Like most people, I'm a big fan of music. When I see recommendations on music, whether it be my from friends, publications, or social media, I add that new suggestion to a running list I keep on my Notes app. One of the albums to which I recently listened is "Don't Quit Your Day Job!", an album by Consequence (a former GOOD Music signee) that dropped in 2007. After a few spins, I wondered how this album was received by critics when it initially came out over a decade ago. I went to [Metacritic](https://www.metacritic.com) to see if I could find any content on the album. The website assigns scores to albums (similar to Rotten Tomatoes), based on its own normalizing criteria (read more about it [here](https://www.metacritic.com/faq#item11). While the album ultimately didn't have any reviews on the site, it did lead me into a rabbit hole of reading other available reviews, and in this process I began to think: are there discrepancies in how genres are ultimately reviewed and scored? Do some tend to be treated more leniently or harshly than others? My motivation was to see if I could draw real insights from the available music review scores.
+Like most people, I'm a big fan of music. When I see recommendations on music, whether it be my from friends, publications, or social media, I add that new suggestion to a running list I keep on my Notes app. One of the albums to which I recently listened is "Don't Quit Your Day Job!", an album by Consequence (a former GOOD Music signee) that dropped in 2007. After a few spins, I wondered how this album was received by critics when it initially came out over a decade ago. I went to [Metacritic](https://www.metacritic.com) to see if I could find any content on the album. The website assigns scores to albums (similar to Rotten Tomatoes), based on its own normalizing criteria (read more about it [here](https://www.metacritic.com/faq#item11)). While the album ultimately didn't have any reviews on the site, it did lead me into a rabbit hole of reading other available reviews, and in this process I began to think: are there discrepancies in how genres are ultimately reviewed and scored? Do some tend to be treated more leniently or harshly than others? My motivation was to see if I could draw real insights from the available music review scores.
 
 # Hypothesis
 While I explored all of the data I received across all genres (see below for my EDA), I keyed in on the available reviews for rap albums. I compared rap to all other genres. I had no specific theories on the genres from which rap would be different, but I felt that there had to be differences with at least a handful.
@@ -20,6 +20,11 @@ Upon completion, I used an SFTP to grab all of this data, and using PyMongo & Pa
 In total, I collected 16,604 rows of data across genres. My analysis focuses entirely on the Metascore values.
 
 # Exploratory Data Analysis
+Once I organized my data, I was immediately interested in seeing the data presented in a raw way. I created normalized histograms for Metascores for each genre so I could quickly see the shapes of these plots, and while we get some skews and abnormality, the overall shape of each plot is roughly normal.
+![Histograms for each genre](images/genrehists.png)
+I also made plots of the data for all genres combined. These include a histogram of raw counts, a boxplot, and a probability plot. The goal here was to assess just how normal the population distribution was.
+![Normality checks for all data](images/normality.png)
+
 
 # Results
 
@@ -37,6 +42,3 @@ Lastly, I'd also be interested in exploring if reviews have changed over the yea
 
 # Acknowledgements
 A big thanks to Dan Rupp, Juliana Duncan, Peter Galea, and Austin Penner, each of whom poured a lot of their time and energy in helping me complete this project. A special thanks, too, to [Metacritic](https://www.metacritic.com) which is where I received all data used for this project.
-
-
-![test](images/genrehists.png)
