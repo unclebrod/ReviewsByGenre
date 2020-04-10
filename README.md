@@ -30,7 +30,12 @@ Additional exploratory plots include bar graphs for sample statistics including 
 ![Standard deviations for each genre](images/genrestdev.png)
 
 # Results
-Using the design outlined under the [Hypothesis](#hypothesis), I compared rap to the other 24 genres. Interesting enough, we failed to reject the null hypothesis and rejected the null hypothesis 12 times each. We rejected the null hypothesis that the means of rap were equal to other genres for each alt-country, alternative, blues, country, electronic, experimental, folk, indie, jazz, pop, techno, and world. In fact, when looking at the distributions of these samples, the mean of rap reviews is lower in all instances outside of alternative & pop!
+Using the design outlined under the [Hypothesis](#hypothesis), I compared rap to the other 24 genres. Interestingly enough, we failed to reject the null hypothesis and rejected the null hypothesis 12 times each. We rejected the null hypothesis that the means of rap were equal to other genres for each alt-country, alternative, blues, country, electronic, experimental, folk, indie, jazz, pop, techno, and world. In fact, when looking at the distributions of these samples, the mean of rap reviews is lower in all instances outside of alternative & pop!  
+![Metacritic: rap & pop](images/poprapcomp.png)
+![Metacritic: rap & indie](images/indierapcomp.png)
+![Metacritic: rap & country](images/countryrapcomp.png)
+![Metacritic: rap & jazz](images/jazzrapcomp.png)
+
 
 We failed to reject the null hypothesis for the remaining 12 genres, which include dance, house, latin, metal, punk, R&B, reggae, rock, singer-songwriter, soul, soundtrack, and vocal. While I would hate to suggest that any genre is less valid, I do think being comparable to soundtrack (which is really a blend of genres) and vocal (which Metacritic does not define explicity but appears similarly to be a loose collection of genres) isn't particularly informative.
 
@@ -73,9 +78,9 @@ The other angle would be that critics are just harder on rap music. This isn't h
 Of course, the truth could lie somewhere in the middle. Where you end up on that spectrum is a reflection of your own beliefs and biases. I lean strongly and firmly on the side of critics being harder on rap than on other genres. As a longtime fan of rap - a genre that is so undeniable and unique that its songs are mainstays on radio and streaming services alike - I'll never buy into it **actually** being worse than other genres.
 
 # Other Factors to Consider
-Metacritic does allow albums to appear across multiple genres. When considering if these values should be removed or handled in some other way, I decided against it as I do believe lots of music matches the descriptions of multiple genres. I am of the belief that given how expansive my data is, these data would not sway my results or beliefs in a meaningful way.
+Metacritic does allow albums to appear across multiple genres. When considering if these values should be removed or handled in some other way, I decided against it as I do believe lots of music matches the descriptions of multiple genres. Similarly, there's a chance that some albums that were only placed in on genre actually should've been in multiple genres. I am of the belief that given how expansive my data is, these data would not sway my results or beliefs in a meaningful way.
 
-Metacritic itself aggregates and normalizes scores based on its own criteria on a scale of 0-100. For example, if a publication gives an album 5/5 stars, this is an easy conversion to 100. However, not all critics assign values to albums, and in these instances Metacritic staff read these reviews and assign their own value to them. This, of course, could lead to biases. It's hard to determine if these biases would "cancel" each other out in the aggregates, or if instead it coud lead to a multiplicative effect in certain cases.
+Metacritic itself aggregates and normalizes scores based on its own criteria on a scale of 0-100. For example, if a publication gives an album 5/5 stars, this is an easy conversion to 100. However, not all critics assign values to albums, and in these instances Metacritic staff read these reviews and assign their own value to them. This, of course, could lead to biases. It's hard to determine if these biases would "cancel" each other out in the aggregate, or if instead it coud lead to a multiplicative effect in certain cases.
 
 For a Metacritic score to appear in the 'Browse by Genre' section, it has to have at least seven reviews. Given the scale and quickness at which music is released, I believe this is a fine cutoff and likely pruned out data that is less useful (essentially, Metacritic did the work for me of removing samples of the sample with insufficient size).
 
