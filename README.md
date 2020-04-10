@@ -84,7 +84,7 @@ Metacritic itself aggregates and normalizes scores based on its own criteria on 
 
 For a Metacritic score to appear in the 'Browse by Genre' section, it has to have at least seven reviews. Given the scale and quickness at which music is released, I believe this is a fine cutoff and likely pruned out data that is less useful (essentially, Metacritic did the work for me of removing samples of the sample with insufficient size).
 
-Bonferroni corrections lead to fewer familywise erros, but is also a very conservative method that can increase the probability of false negatives. In my case, I ackowledge and am fine with this concession. By effectively lowering alpha, I can feel more precise about my results. There are no real consequences for me in interpreting the data in this way. 
+Bonferroni corrections lead to fewer familywise erros, but is also a very conservative method that can increase the probability of false negatives. In my case, I ackowledge and am fine with this concession. By effectively lowering alpha, I can feel more precise about my results. There are no real consequences for me in interpreting the data in this way (this was all for fun and out of curiosity!). 
 
 # Technologies
 * Python (including Seaborn, Matplotlib, PyMongo, Beautiful Soup, SciPy, Pandas, and Numpy)
