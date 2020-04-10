@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 # Initialize the workspace
 from pymongo import MongoClient
 import pprint
@@ -12,25 +6,9 @@ import requests
 import pandas as pd
 import time
 
-
-# In[2]:
-
-
 # Connect with Mongo to place data into a database
 client = MongoClient('localhost', 27017)
 db = client['metacritic']
-test = db['test']
-
-
-# In[4]:
-
-
-# Test databases/collection
-test.insert_one({'abc': 123})
-
-
-# In[5]:
-
 
 # Create Mongo collections in which to place data
 altcountry = db['altcountry']
@@ -66,10 +44,6 @@ coll_list = [altcountry, alternative, blues, comedy, country,
              rb, reggae, rock, singersongwriter, soul,
              soundtrack, techno, vocal, world]
 
-
-# In[11]:
-
-
 # Create a dictionary of genres and their associated page numbers
 genre_dict = {'alt-country': 6, 'alternative': 38, 'blues':6, 'comedy':0,
               'country': 25, 'dance':6, 'electronic': 79, 'experimental':10,
@@ -78,17 +52,9 @@ genre_dict = {'alt-country': 6, 'alternative': 38, 'blues':6, 'comedy':0,
               'rb':26, 'reggae':3, 'rock': 132, 'singer-songwriter':9,
               'soul':7, 'soundtrack':2, 'techno':6, 'vocal':4, 'world':2}
 
-
-# In[12]:
-
-
 # Define Beautiful Soup parameters
 url = 'https://www.metacritic.com/browse/albums/genre/date/{}?page={}'
 user_agent = {'User-agent': 'Mozilla/5.0'}
-
-
-# In[13]:
-
 
 # Loop through all pages in all genre, placing them in MongoDB along the way
 for (genre, pages), coll in zip(genre_dict.items(), coll_list):
@@ -110,40 +76,3 @@ for (genre, pages), coll in zip(genre_dict.items(), coll_list):
             coll.insert_one({'album':album, 'artist':artist, 
                              'date':date, 'score':score})
         time.sleep(15)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
