@@ -20,16 +20,19 @@ Upon completion, I used an SFTP to grab all of this data, and using PyMongo & Pa
 In total, I collected 16,604 rows of data across genres. My analysis focuses entirely on the Metascore values.
 
 # Exploratory Data Analysis
-Once I organized my data, I was immediately interested in seeing the data presented in a raw way. I created normalized histograms for Metascores for each genre so I could quickly see the shapes of these plots, and while we get some skews and abnormality, the overall shape of each plot is roughly normal.  
-![Histograms for each genre](images/genrehists.png)
-I also made plots of the data for all genres combined. These include a histogram of raw counts, a boxplot, and a probability plot. The goal here was to assess just how normal the population distribution was.  
-![Normality checks for all data](images/normality.png)
-Additional exploratory plots include bar graphs for sample statistics including total review count, mean review scores, and standard deviations.  
+Once I organized my data, I was immediately interested in seeing the data presented in a raw way. I created normalized histograms for Metascores for each genre (25 in total) so I could quickly see the shapes of these plots, and while we get some skews and abnormalities, the overall shape of each plot is roughly normal.  
+![Histograms for each genre](images/genrehists.png)  
+I also made plots of the data for all genres combined. These include a histogram of raw counts, a boxplot, and a probability plot. The goal here was to assess just how normal the population distribution was, and through these visualizations we can feel more confident about the data's normality.  
+![Normality checks for all data](images/normality.png)  
+Additional exploratory plots include bar graphs for sample statistics including total review count, mean review scores, and standard deviations. Discoveries here include seeing that the mean of genre reviews across all genres has a range of roughly 10 and the standard deviation has a range of 5 of 6. We also find that the genres with the most recorded scores include rock (3948, almost double second place), electronic (2358), and indie (2219), and that the genres with the fewest recorded scores include world (37), soundtrack (51), and latin (55).  
 ![Counts for each genre](images/genrecounts.png)
 ![Means for each genre](images/genremeans.png)
 ![Standard deviations for each genre](images/genrestdev.png)
 
 # Results
+Using the design outlined under the [Hypothesis](#hypothesis), I compared rap to the other 24 genres. Interesting enough, we failed to reject the null hypothesis and rejected the null hypothesis 12 times each. We rejected the null hypothesis that the means of rap were equal to other genres for each alt-country, alternative, blues, country, electronic, experimental, folk, indie, jazz, pop, techno, and world. In fact when looking at the distributions of these samples, the mean of rap reviews is lower in all instances outside of alternative & pop!
+
+We failed to reject the null hypothesis for the remaining 12 genres, which include dance, house, latin, metal, punk, R&B, reggae, rock, singer-songwriter, soul, soundtrack, and vocal.
 
 # Technologies
 * Python (including Seaborn, Matplotlib, PyMongo, Beautiful Soup, SciPy, Pandas, and Numpy)
