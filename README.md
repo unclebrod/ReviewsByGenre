@@ -20,11 +20,14 @@ Upon completion, I used an SFTP to grab all of this data, and using PyMongo & Pa
 In total, I collected 16,604 rows of data across genres. My analysis focuses entirely on the Metascore values.
 
 # Exploratory Data Analysis
-Once I organized my data, I was immediately interested in seeing the data presented in a raw way. I created normalized histograms for Metascores for each genre so I could quickly see the shapes of these plots, and while we get some skews and abnormality, the overall shape of each plot is roughly normal.
+Once I organized my data, I was immediately interested in seeing the data presented in a raw way. I created normalized histograms for Metascores for each genre so I could quickly see the shapes of these plots, and while we get some skews and abnormality, the overall shape of each plot is roughly normal.  
 ![Histograms for each genre](images/genrehists.png)
-I also made plots of the data for all genres combined. These include a histogram of raw counts, a boxplot, and a probability plot. The goal here was to assess just how normal the population distribution was.
+I also made plots of the data for all genres combined. These include a histogram of raw counts, a boxplot, and a probability plot. The goal here was to assess just how normal the population distribution was.  
 ![Normality checks for all data](images/normality.png)
-
+Additional exploratory plots include bar graphs for sample statistics including total review count, mean review scores, and standard deviations.  
+![Counts for each genre](images/genrecounts.png)
+![Means for each genre](images/genremeans.png)
+![Standard deviations for each genre](images/genrestdev.png)
 
 # Results
 
