@@ -246,7 +246,7 @@ def ttest_for_rap(score_list, alpha=0.05):
                 same_list.append(tup[0])
     return diff_list, same_list
 
-def compare_genres(score_list, genre1, genre2='rap', alpha=0.05):
+def compare_genres(score_list, genre1, genre2='rap', alpha=0.05, bonf=1):
     '''
     Given a list of name array tuples, two genres, and an alpha value, this
     function will plot the raw histogram of those genres, the normalized
@@ -258,6 +258,8 @@ def compare_genres(score_list, genre1, genre2='rap', alpha=0.05):
     genre1 (string): a genre of interest
     genre2 (string): a genre of interest
     alpha (float): the alpha value to be used for this test
+    bonf (int): the number of tests being ran, should you like to include 
+                a bonferroni correction (bonf is the same as n)
 
     Returns:
     pvalue (float): the calculated p-value using a Welch's t-test
@@ -324,7 +326,7 @@ def compare_genres(score_list, genre1, genre2='rap', alpha=0.05):
     tstat, pvalue = stats.ttest_ind(df1, df2, equal_var=False)
     conf = 100 - (alpha * 100)
     print(pvalue)
-    if pvalue < alpha/2:
+    if pvalue < alpha/2/bonf:
         print(f'With {conf}% confidence, we reject the null hypothesis '\
               'that these means are the same')
         return pvalue
